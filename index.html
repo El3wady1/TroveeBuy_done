@@ -1,205 +1,67 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You | TroveeBuy</title>
-    <style>
-        :root {
-            --primary: #6772e5;
-            --success: #24b47e;
-            --light: #f6f9fc;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            background-image: radial-gradient(circle at 10% 20%, rgba(103, 114, 229, 0.1) 0%, rgba(36, 180, 126, 0.1) 90%);
-        }
-        
-        .success-container {
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-            padding: 60px 40px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            animation: fadeIn 0.8s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .success-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: linear-gradient(90deg, #6772e5, #24b47e);
-        }
-        
-        .store-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .store-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: contain;
-            margin-bottom: 15px;
-            border: 2px solid #f1f1f1;
-            padding: 5px;
-            background: white;
-        }
-        
-        .store-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2d3748;
-            margin: 0;
-        }
-        
-        .success-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #24b47e, #6772e5);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 30px;
-            box-shadow: 0 10px 25px rgba(36, 180, 126, 0.3);
-        }
-        
-        .success-icon svg {
-            width: 60px;
-            height: 60px;
-            fill: white;
-        }
-        
-        h1 {
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-        
-        p {
-            color: #4a5568;
-            margin-bottom: 0;
-            line-height: 1.8;
-            font-size: 18px;
-            max-width: 380px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #f0f;
-            opacity: 0;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes checkmark {
-            0% { stroke-dashoffset: 50; }
-            100% { stroke-dashoffset: 0; }
-        }
-        
-        .checkmark {
-            stroke-dasharray: 50;
-            stroke-dashoffset: 50;
-            animation: checkmark 0.8s ease-in-out forwards;
-            animation-delay: 0.3s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .success-icon {
-            animation: float 4s ease-in-out infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Order Success - TroveeBuy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    .card img {
+      width: 80px;
+    }
+    .card h1 {
+      margin: 1rem 0 0.5rem;
+      color: #0f766e;
+    }
+    .card p {
+      margin: 0.5rem 0;
+      color: #334155;
+    }
+  </style>
 </head>
 <body>
-    <div class="success-container">
-        <div class="store-header">
-            <img src="https://firebasestorage.googleapis.com/v0/b/pure-zoo-406914.appspot.com/o/logoapps%2Fshopping.png?alt=media&token=4d3a92fd-5df2-4404-b767-88eda54f0d14" alt="TroveeBuy Logo" class="store-logo">
-            <h2 class="store-name">TroveeBuy</h2>
-        </div>
-        
-        <div class="success-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path class="checkmark" fill="none" stroke="white" stroke-width="3" d="M5 13l4 4L19 7"/>
-            </svg>
-        </div>
-        
-        <h1>Thank You!</h1>
-        <p>Your order <strong>#{{orderNumber}}</strong> has been successfully placed. Your total amount is <strong>${{orderAmount}}</strong>. We will process it shortly.</p>
-        <p>You will receive an email confirmation with the details of your order.</p>
-    </div>
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Success">
+    <h1>Thank You!</h1>
+    <p>Your order <strong>#<span id="orderNumber">Loading...</span></strong> has been successfully placed.</p>
+    <p>Your total amount is <strong>$<span id="orderAmount">...</span></strong>.</p>
+    <p>We will process it shortly.<br>You will receive an email confirmation soon.</p>
+  </div>
 
-    <script>
-        function createConfetti() {
-            const colors = ['#6772e5', '#24b47e', '#ff3860', '#faab1e'];
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.top = -10 + 'px';
-                confetti.style.width = Math.random() * 8 + 5 + 'px';
-                confetti.style.height = Math.random() * 8 + 5 + 'px';
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                document.body.appendChild(confetti);
-                
-                const animationDuration = Math.random() * 3 + 2;
-                
-                confetti.animate([{
-                    transform: `translate(${Math.random() * 200 - 100}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)`,
-                    opacity: 1
-                }, {
-                    opacity: 0
-                }], {
-                    duration: animationDuration * 1000,
-                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)',
-                    delay: Math.random() * 2000
-                });
-                
-                setTimeout(() => confetti.remove(), animationDuration * 1000);
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(createConfetti, 1000);
-            setTimeout(createConfetti, 2000);
-        });
-    </script>
+  <script>
+    const sessionId = new URLSearchParams(window.location.search).get("session_id");
+
+    async function getSessionDetails() {
+      if (!sessionId) return;
+
+      try {
+        const res = await fetch(`https://your-backend.com/api/checkout-session/${sessionId}`);
+        const data = await res.json();
+
+        document.getElementById("orderNumber").textContent = data.id || 'N/A';
+        document.getElementById("orderAmount").textContent = (data.amount_total / 100).toFixed(2);
+      } catch (error) {
+        console.error("Error fetching session:", error);
+        document.getElementById("orderNumber").textContent = 'Error';
+        document.getElementById("orderAmount").textContent = 'Error';
+      }
+    }
+
+    getSessionDetails();
+  </script>
 </body>
 </html>
