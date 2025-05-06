@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -160,7 +160,8 @@
         </div>
         
         <h1>Thank You!</h1>
-        <p>Your order with TroveeBuy has been received and will be processed shortly.</p>
+        <p>Your order <strong>#{{orderNumber}}</strong> has been successfully placed. Your total amount is <strong>${{orderAmount}}</strong>. We will process it shortly.</p>
+        <p>You will receive an email confirmation with the details of your order.</p>
     </div>
 
     <script>
@@ -180,13 +181,12 @@
                 
                 const animationDuration = Math.random() * 3 + 2;
                 
-                confetti.animate([
-                    { 
-                        transform: `translate(${Math.random() * 200 - 100}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)`,
-                        opacity: 1
-                    },
-                    { opacity: 0 }
-                ], {
+                confetti.animate([{
+                    transform: `translate(${Math.random() * 200 - 100}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)`,
+                    opacity: 1
+                }, {
+                    opacity: 0
+                }], {
                     duration: animationDuration * 1000,
                     easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)',
                     delay: Math.random() * 2000
