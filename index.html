@@ -49,7 +49,7 @@
       if (!sessionId) return;
 
       try {
-        const res = await fetch(`https://your-backend.com/api/checkout-session/${sessionId}`);
+        const res = await fetch(`http://localhost:3000/api/orders/getcheckout-session/${sessionId}`);
         const data = await res.json();
 
         document.getElementById("orderNumber").textContent = data.id || 'N/A';
