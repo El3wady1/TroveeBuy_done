@@ -37,7 +37,8 @@
   <div class="card">
     <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Success">
     <h1>Thank You!</h1>
-    <p>Your order <strong><p></p>has been successfully placed.</p>
+    <p>Your order <strong>#<span id="orderNumber">Loading...</span></strong> has been successfully placed.</p>
+    <p>Your total amount is <strong>$<span id="orderAmount">...</span></strong>.</p>
     <p>We will process it shortly.<br>You will receive an email confirmation soon.</p>
   </div>
 
@@ -48,7 +49,7 @@
       if (!sessionId) return;
 
       try {
-        const res = await fetch(`http://localhost:3000/api/orders/getcheckout-session/${sessionId}`);
+        const res = await fetch(`http://localhost:8000/api/orders/getcheckout-session/${sessionId}`);
         const data = await res.json();
 
         document.getElementById("orderNumber").textContent = data.id || 'N/A';
